@@ -1,0 +1,17 @@
+delivery_id,location_name,x_coordinate,y_coordinate,priority,service_time_minutes,delivery_deadline_minutes,package_size,is_depot
+0,Central Depot,50.0,50.0,1,0,0,None,True
+1,Customer 01,74.7,44.5,5,6,241,Medium,False
+2,Customer 02,82.3,67.8,4,5,261,Large,False
+3,Customer 03,13.5,92.8,2,4,503,Large,False
+4,Customer 04,73.5,75.7,5,7,201,Medium,False
+5,Customer 05,16.5,45.5,3,8,397,Large,False
+6,Customer 06,38.4,88.4,2,10,229,Small,False
+7,Customer 07,62.9,79.0,5,6,114,Small,False
+8,Customer 08,44.9,25.5,2,4,425,Large,False
+9,Customer 09,54.9,10.7,1,9,364,Medium,False
+10,Customer 10,79.5,61.8,3,8,394,Small,False
+11,Customer 11,73.2,36.9,4,8,268,Large,False
+12,Customer 12,92.4,85.4,1,3,441,Small,False
+13,Customer 13,75.1,22.5,3,5,391,Large,False
+14,Customer 14,47.0,8.9,1,9,402,Small,False
+15,Customer 15,18.9,66.5,4,9,166,Large,False
