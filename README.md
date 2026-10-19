@@ -351,30 +351,7 @@ expected to favour it; the more meaningful evidence is the trade-off (fewer late
 longer route). One dataset and 10 seeds is an illustration, not proof of general superiority. Try other
 dataset seeds and weights (`reports/results_weight_sensitivity.csv`, produced with `--sensitivity`).
 
-## 16. Viva questions (20) with short answers
-
-1. **What problem does QuickRoute solve?** Ordering the stops of one delivery vehicle so the route is short and urgent customers are served on time.
-2. **Which Soft Computing techniques are used?** Ant Colony Optimization and Mamdani Fuzzy Logic.
-3. **What is ACO?** A population-based metaheuristic where artificial ants build solutions guided by pheromone trails and a heuristic, inspired by real ants.
-4. **What are tau and eta?** tau is the pheromone level on an edge (learned experience); eta = 1/distance is the heuristic desirability.
-5. **Write the transition probability.** P(i,j) = tau^alpha * eta^beta / sum over unvisited k of tau(i,k)^alpha * eta(i,k)^beta.
-6. **What do alpha and beta control?** alpha: how much ants trust pheromone; beta: how much they prefer short edges (greedy).
-7. **Why does pheromone evaporate?** To forget poor early choices, avoid premature convergence and keep numbers bounded.
-8. **How do better routes deposit more pheromone?** Each ant deposits Q / cost, so a lower cost gives a bigger deposit.
-9. **What is the elitist boost?** Extra pheromone on the best-so-far route to speed up convergence (set it to 0 to switch off).
-10. **Does ACO guarantee the optimal route?** No. It is a heuristic; we only verified it matches brute force on a small instance.
-11. **Why fuzzy logic instead of "late = 1, on time = 0"?** Lateness is gradual: 2 minutes late for a low-priority parcel is not the same as 60 minutes late for a high-priority one.
-12. **What are the fuzzy inputs and output?** Inputs: priority (1-5) and arrival - deadline in minutes (positive = late). Output: penalty 0-100.
-13. **What is Mamdani inference?** Fuzzify inputs, evaluate IF-THEN rules (AND = min), clip each output set, aggregate (max), defuzzify (centroid).
-14. **What is the centroid method?** The x-coordinate of the centre of area of the aggregated output shape.
-15. **How does priority affect the penalty?** Higher priority fires rules with larger output terms, so the same lateness costs more (High+Critical -> Very high).
-16. **Why implement the FIS yourself?** It is fast (called thousands of times), has no fragile dependency, and every step can be shown in the viva.
-17. **What is the objective function?** J = w_d * D/D_ref + w_p * P/P_ref; weights are >= 0 and sum to 1.
-18. **Why fixed reference scales D_ref and P_ref?** Normalising each route separately would make J values incomparable; fixed scales keep the objective consistent.
-19. **How do you compare the algorithms fairly?** Same data, same assumptions, same J; ACO is repeated over seeds and mean +- std is reported.
-20. **What are the main limitations?** Synthetic data, single vehicle, no waiting/traffic/capacity, heuristic search, small fuzzy ripples, results from one dataset.
-
-## 17. Limitations and future improvements
+## 16. Limitations and future improvements
 
 | Implemented | Proposed future work (not implemented) |
 |---|---|
@@ -385,7 +362,7 @@ dataset seeds and weights (`reports/results_weight_sensitivity.csv`, produced wi
 | ACO with distance heuristic | Deadline-aware heuristic, MAX-MIN Ant System, local search (2-opt) |
 | Tests on 1-15 deliveries | Larger benchmark instances and statistical significance tests |
 
-## 18. Project structure
+## 17. Project structure
 
 ```
 quickroute/
